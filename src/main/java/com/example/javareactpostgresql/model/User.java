@@ -17,6 +17,10 @@ public class User {
 
     private String role = "USER"; // Default role
 
+    private String accountType; // New field for account type
+
+    private String linkedin; // New field for LinkedIn URL
+
     // Getters and Setters
     public Long getId() {
         return id;
@@ -49,5 +53,20 @@ public class User {
     public void setRole(String role) {
         this.role = role;
     }
-}
 
+    public String getAccountType() {
+        return accountType;
+    }
+
+    public void setAccountType(String accountType) {
+        this.accountType = accountType;
+    }
+
+    public String getLinkedin() {
+        return linkedin;
+    }
+
+    public void setLinkedin(String linkedin) {
+        this.linkedin = linkedin;
+    }
+}

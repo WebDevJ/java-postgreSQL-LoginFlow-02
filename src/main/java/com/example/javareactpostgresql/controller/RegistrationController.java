@@ -17,22 +17,17 @@ public class RegistrationController {
     @Autowired
     private PasswordEncoder passwordEncoder;
 
-    // Serve the registration page
-//    @GetMapping("/register")
-//    public RedirectView showRegistrationForm() {
-//        return new RedirectView("/register.html"); // This will serve static/register.html
-//    }
-
     @GetMapping("/register")
     public String showRegistrationForm() {
-        return "register";
+        return "register"; // Corresponds to the register.html template
     }
 
-    // Handle form submission
     @PostMapping("/register")
     public String registerUser(
             @RequestParam("email") String email,
             @RequestParam("password") String password,
+            @RequestParam("accountType") String accountType,
+            @RequestParam("linkedin") String linkedin,
             Model model
     ) {
         if (userRepository.findByEmail(email).isPresent()) {
@@ -42,7 +37,9 @@ public class RegistrationController {
 
         User user = new User();
         user.setEmail(email);
-        user.setPassword(passwordEncoder.encode(password));
+        user.setPassword(passwordEncoder.encode(password)); // Hash the password
+        user.setAccountType(accountType);
+        user.setLinkedin(linkedin);
         userRepository.save(user);
 
         model.addAttribute("success", "User registered successfully!");
