@@ -1,6 +1,8 @@
-Meeting : 01/27/2025 @ 430pm
-**Basic java-postgreSQL-LoginFlow-02^^
+### Meeting : 01/27/2025 @ 430pm  
+# Basic java-postgreSQL-LoginFlow-02  
+Diagram example of code in Layers:  
 
+```
 +--------------------+
 |      Client        |
 | (Browser/Postman)  |
@@ -34,7 +36,13 @@ Meeting : 01/27/2025 @ 430pm
 +--------------------+
           |
           v
+
 +--------------------+
 |    Database Layer  |
 | (PostgreSQL)       |
 +--------------------+
+
+```
+App includes CRUD Operations for: Registration | Authentication | Authorization
+
+
