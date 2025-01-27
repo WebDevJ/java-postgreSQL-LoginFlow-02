@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DashBoard</title>
+</head>
+<body>
+<h1>Welcome to the User Dashboard</h1>
+<p>Logged in as: <span style="font-weight: bold; color: crimson" th:text="${username}">[User]</span>    <--- {user Name Passed using the Model object in the controller}</p>
+<!--<p>Logged in as: <span th:text="${#authentication.name}">[User]</span>{Thymeleaf expression}</p>-->
+<!--<p>Logged in as: <span th:text="${#httpServletRequest.remoteUser}">[User]</span> {Passed using the Model object in the controller}</p>-->
+<a href="/logout">Logout</a>
+
+</body>
+</html>
